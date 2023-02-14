@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { Telegraf } = require('telegraf');
-const bot = new Telegraf("2116807632:AAHNrqwSP-v6Q9MBFvTqcIFPsZnP4jsFA04");
+const bot = new Telegraf("BOT TOKEN");
 
 app.use(express.json())
 
@@ -12,7 +12,7 @@ app.post("/webhook", (req, res) => {
 
     const msg = `Hi My Name is ${symbol} and my age is ${price}`
     console.log(msg);
-    bot.telegram.sendMessage('-700794547', msg)
+    bot.telegram.sendMessage('Chat_id', msg)
         .then((res) => {
             console.log('Message sent successfully:', res);
         })
